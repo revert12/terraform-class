@@ -10,7 +10,7 @@
 resource "aws_security_group" "vec_prd_ecs_pub_2a_sg" {
   name        = "VEC-PRD-ECS-PUB-2A-SG"
   description = "Security group for ECS instance in public subnet 2a"
-  vpc_id      = data.aws_vpc.vec_prd_vpc.id  # data로 참조
+  vpc_id      = aws_vpc.vec_prd_vpc.id  # data로 참조
 
   tags = {
     Name = "VEC-PRD-ECS-PUB-2A-SG"
@@ -52,3 +52,4 @@ resource "aws_security_group" "vec_prd_ecs_pub_2a_sg" {
     description = "Allow all outbound traffic"
   }
 }
+
